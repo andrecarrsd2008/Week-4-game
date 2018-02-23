@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Bigelow Rules' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+<div class="container">
+
+  <div class="jumbotron">
+   Crystal Collector
+  </div>
+
+     <div class="row">
+       
+        <div class="col-12 col-sm-3">
+    
+          <div class="panel-heading">
+          <p><strong>You will start with a random number at the start of the game. <br></p> 
+          <p> There are four crystals below. By clicking on the crystals, 
+              you will add a specific amount of points to your score. <br></p>  
+          <p> You win the game by matching total score to random number, you
+              will lose if your total score goes above the random number. <br></p>
+          <p> The value of each crystal is hidden from you until you click it. <br></p>
+          <p> Each time the game starts, the game will change the value of each crystal.</strong> <br></p>
+          </div>
+     
+        </div>
+     </div>
+    <!--Random Box-->
+    <div class="row">
+        <div class="col-xs-3">
+        <div id="panel1" class="panel-default">
+             <div class="panel-headings">
+                 <h3 class="panel-randNum">Random</h3>
+             </div>
+        </div>
+    </div>
+
+    <!--Second Box-->
+              <div class="col-xs-3">
+                <div id="panel2" class="panel-default">
+                    <h5 class="panel-randNum"><strong>Win 0</strong></h5>
+                    <h5><strong>Losses 0</strong></h5>
+                     </div>
+                </div>
+              
+<div class="container">
+  <div class="row">
+    <div class="col 12 col-xs-3"> 
+       <div class="panel-images">
+     <button class="panel-button crystals" id="diamond" data-panelid="panel"><img src="assets/images/diamond.jpg" alt="diamond" width = 50px></button>
+     <button class="panel-button" id="ruby" data-panelid="panel"><img src="assets/images/ruby.jpg" alt="ruby" width = 50px></button>
+     <button class="panel-button" id="saphire" data-panelid="panel"><img src="assets/images/saphire.jpg" alt="saphire" width = 50px></button>
+     <button class="panel-button" id="topaz" data-panelid="panel"><img src="assets/images/topaz.jpg" alt="topaz" width = 50px></button>   
+     </div>
+    </div>
+ </div>   
+   
+         <div class="col-12 col-xs-3">
+                <div id="panel3" class="panel panel-primary">
+                   <h5 class="panel">Your total score is:</h5>
+                </div>
+        </div>
+ 
+        <div class="col-12 col-xs-3">
+                <div id="panel4" class="panel panel-primary">
+                   <h5 class="panel">0</h5>
+                </div>
+        </div>
+<!-- <script>
+  $(function() {
+
+    var content = "My New Awesome Contest";
+      
+    $('.panel-button').on('click', function() {
+      var panelid = $(this).attr('data-panelid');
+      $('#'+panelId).toggle();
+      $('#'+panelId+'.panel-body').html(content);
+    });
+  
+});
+
+</script> -->
+<script src="assets/javascript/game.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</body>
+</html>
