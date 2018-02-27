@@ -1,64 +1,103 @@
-{
-    let totalScore = 0;
-    // Assign GLOBAL variables
-    let scoreToBeat = 0;
-    let wins = 0;
-    let loses = 0;
-    let randNum;
-    let gemValues;
-   
-    //RandNum function
-    function randNumber() {
-        return Math.floor((Math.random() * 120) + 19);
+var randomScore=0
+var totalScore=0
+var wins=0
+var losses=0
+
+function start () {
+$(".panelWin").html("wins "+wins)
+$(".lost").html("losses "+losses)
+randomScore=randNumber(120,19)
+$(".panel-randNum").html(randomScore)
+totalScore=0
+$("#totalScore").html(totalScore)
+$("#diamond").val(randNumber(12,1))
+$("#ruby").val(randNumber(12,1))
+$("#saphire").val(randNumber(12,1))
+$("#topaz").val(randNumber(12,1))
+}
+
+$("#diamond").on("click", function() {
+  console.log("diamonds")
+var diamondValue=$("#diamond").val()
+totalScore=totalScore+parseInt(diamondValue)
+$("#totalScore").html(totalScore)
+$("#message").html("")
+
+if (totalScore===randomScore) {
+    wins=wins+1
+    start() 
+    $("#message").html("You Win!!!")
+
+}
+else if(totalScore > randomScore){
+    losses=losses+1
+    start()
+    $("#message").html("You Lose :(")
+  }
+});
+
+$("#ruby").on("click", function() {
+    console.log("ruby")
+    var rubyValue=$("#ruby").val()
+    totalScore=totalScore+parseInt(rubyValue)
+    $("#totalScore").html(totalScore)
+    $("#message").html("")
+
+    if (totalScore===randomScore) {
+        wins=wins+1
+        start()
+    
     }
-    // Start Function
-    function start() {
-        // Generate Random Number and assign it to a variable between 19 and 120 formula:[ () * (max - min + 1)) + min];
-        randNum = randNumber()
-        console.log(randNum); //sanity test: works!
-        // Display random number in "#scoreToBeat" ID.
-        $("#scoreToBeat").text(randNum);
-        // Generate a random number for all gems that should be bwteen 1 and 12.
-        let saphireNum = Math.floor((Math.random() * 12) + 1);
-        console.log(saphireNum);
-        let rubyNum = Math.floor((Math.random() * 12) + 1);
-        console.log(rubyNum);
-        let diamondNum = Math.floor((Math.random() * 12) + 1);
-        console.log(diamondNum);
-        let topazNum = Math.floor((Math.random() * 12) + 1);
-        console.log(amethystNum);
-        totalScore = 0;
-        $("#panel").text(panel);
-        return [saphireNum, rubyNum, diamondNum, topazNum];
-        
+    else if(totalScore > randomScore){
+        losses=losses+1
+        start()
+      }
+  })
+
+  $("#saphire").on("click", function() {
+    console.log("saphire")
+    var saphireValue=$("#saphire").val()
+    totalScore=totalScore+parseInt(saphireValue)
+    $("#totalScore").html(totalScore)
+    $("#message").html("")
+
+    if (totalScore===randomScore) {
+        wins=wins+1
+        start()
+    
     }
-    // Create an on.click event that triggers and adds the "saphireNum" to the totalScore.
-       $(".crystals").on("click", function () {
-        // if .this "click" event .is(has) id "img-saphire"
-        if ($(this).is("#img-saphire")) {
-            //add the number gen by saphire to totalScore, rinse and repeat...
-            totalScore += gemValues[0];
-        } else if ($(this).is("#img-ruby")) {
-            totalScore += gemValues[1];
-        } else if ($(this).is("#img-diamond")) {
-            totalScore += gemValues[2];
-        } else if ($(this).is("#img-topaz")) {
-            totalScore += gemValues[3];
-        }
-        $("#totalScore").text(totalScore);
-        console.log(totalScore); // check: works!
-        // If totalScore === scoreToBeat add +1 to "winsCount
-        if (totalScore === randNum) {
-            wins++;
-            $("#winsCount").text(wins);
-            gemValues = start();
-            // else +1 to losesCount
-        } else if (totalScore > randNum) {
-            loses++;
-            $("#losesCount").text(loses);
-            gemValues = start();
-        }
-    });
-    gemValues = start();
-    console.log(gemValues);
-};
+    else if(totalScore > randomScore){
+        losses=losses+1
+        start()
+      }
+
+  })
+
+  $("#topaz").on("click", function() {
+    console.log("topaz")
+    var topazValue=$("#topaz").val()
+    totalScore=totalScore+parseInt(topazValue)
+    $("#totalScore").html(totalScore)
+    $("#message").html("")
+
+    if (totalScore===randomScore) {
+        wins=wins+1
+        start()
+    
+    }
+    else if(totalScore > randomScore){
+        losses=losses+1
+        start()
+      }
+   })
+
+
+
+function randNumber(max, min) {
+return Math.floor(Math.random()* (max - min + 1)) + min
+
+}
+
+start()
+
+

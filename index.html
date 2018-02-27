@@ -39,7 +39,7 @@
         <div class="col-xs-3">
         <div id="panel1" class="panel-default">
              <div class="panel-headings">
-                 <h3 class="panel-randNum">Random</h3>
+                 <p class="panel-randNum">Random</p>
              </div>
         </div>
     </div>
@@ -47,22 +47,23 @@
     <!--Second Box-->
               <div class="col-xs-3">
                 <div id="panel2" class="panel-default">
-                    <h5 class="panel-randNum"><strong>Win 0</strong></h5>
-                    <h5><strong>Losses 0</strong></h5>
+                    <h5><strong class="panelWin">Win 0</strong></h5>
+                    <h5><strong class="lost">Losses 0</strong></h5>
+                    <p id="message"></p>
                      </div>
                 </div>
               
-<div class="container">
+
   <div class="row">
     <div class="col 12 col-xs-3"> 
-       <div class="panel-images">
-     <button class="panel-button crystals" id="diamond" data-panelid="panel"><img src="assets/images/diamond.jpg" alt="diamond" width = 50px></button>
-     <button class="panel-button" id="ruby" data-panelid="panel"><img src="assets/images/ruby.jpg" alt="ruby" width = 50px></button>
-     <button class="panel-button" id="saphire" data-panelid="panel"><img src="assets/images/saphire.jpg" alt="saphire" width = 50px></button>
-     <button class="panel-button" id="topaz" data-panelid="panel"><img src="assets/images/topaz.jpg" alt="topaz" width = 50px></button>   
+     <div class="panel-images">
+     <button class="panelButton1" id="diamond" data-panelid="panel"><img src="assets/images/diamond.jpg" alt="diamond"></button>
+     <button class="panelButton2" id="ruby" data-panelid="panel"><img src="assets/images/ruby.jpg" alt="ruby"></button>
+     <button class="panelButton3" id="saphire" data-panelid="panel"><img src="assets/images/saphire.jpg" alt="saphire"></button>
+     <button class="panelButton4" id="topaz" data-panelid="panel"><img src="assets/images/topaz.jpg" alt="topaz"></button>   
      </div>
     </div>
- </div>   
+  </div>   
    
          <div class="col-12 col-xs-3">
                 <div id="panel3" class="panel panel-primary">
@@ -72,26 +73,17 @@
  
         <div class="col-12 col-xs-3">
                 <div id="panel4" class="panel panel-primary">
-                   <h5 class="panel">0</h5>
+                <h5 class="panel" id="totalScore">100</h5>
                 </div>
         </div>
-<!-- <script>
-  $(function() {
 
-    var content = "My New Awesome Contest";
-      
-    $('.panel-button').on('click', function() {
-      var panelid = $(this).attr('data-panelid');
-      $('#'+panelId).toggle();
-      $('#'+panelId+'.panel-body').html(content);
-    });
-  
-});
 
-</script> -->
-<script src="assets/javascript/game.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
 
 
+
+  
+ 
 </body>
 </html>
